@@ -1,0 +1,18 @@
+1. HTML Layout 
+--------------
+Defines the basic structure of the admin dashboard:
+  >Header → Displays the title “Admin Dashboard”.
+  >Navigation Menu → Links to Home, User Management, Settings.
+  >Main Section → Contains a welcome message for the admin.
+  >Footer → Contains copyright.
+  >Includes a theme toggle checkbox that lets users switch between light and dark mode.
+
+  
+2. CSS Styling
+---------------
+Uses CSS Grid Layout to divide the page into 4 sections (header, navigation, main, footer).
+  >Defines a set of CSS variables (--header-bg-color, --nav-bg-color, etc.) for colors.
+Implements theme switching:
+  >Light Theme → Default background and text colors.
+  >Dark Theme → Activated when the checkbox (#theme:checked) is selected, switching the CSS variables to darker shades.
+  >Styles the theme toggle button for better user interaction.

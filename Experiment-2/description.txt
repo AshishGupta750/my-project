@@ -1,0 +1,68 @@
+HTML Structure
+--------------
+Contains a single centered card-style container with:
+  >A heading (h2) — e.g., Account Balance.
+  >A balance display area (div or span) that shows the current balance.
+  >Two full-width action buttons: Deposit and Withdraw.
+  >Optional small form inputs or a modal for entering an amount (left as progressive enhancement).
+Key parts:
+1.Account Card:
+  >Balance label (e.g., h3 or span) showing the text Current Balance.
+  >Balance value element (e.g., div#balance) that displays the numeric amount (starts at 0).
+  >A short helper text or small p for status/messages (e.g., “Last transaction: —”).
+2.Action Area:
+  >Two buttons stacked or side-by-side depending on viewport: Deposit and Withdraw.
+  >Buttons are button elements with clear IDs or classes for JS hooks (e.g., #depositBtn, #withdrawBtn).
+  >Optional amount input (hidden or visible) for the user to type an amount to deposit/withdraw.
+
+CSS Styling
+------------
+body:
+  >Uses a clean sans-serif font.
+  >Centers content vertically and horizontally using Flexbox (mobile-first).
+  >Light gray background for the whole page.
+
+.card / .container:
+  >White background box with padding and comfortable internal spacing.
+  >Subtle shadow and rounded corners for the card.
+  >Fixed or max width (e.g., max-width: 500px) so the UI stays neatly contained on larger screens.
+  >Responsive rules so it shrinks naturally on small screens.
+
+h2 / h3:
+  >Bold, slightly larger font titles above the balance area.
+
+#balance (value display):
+  >Large, prominent font-size so the number is easy to read at a glance.
+  >Monospace or tabular-nums font feature is optional for aligned numerals.
+  >Padding and a soft background or border to separate it visually from the buttons.
+
+button:
+  >Full-width buttons on mobile, or evenly spaced side-by-side on wider screens.
+  >Generous padding and rounded corners; primary color for Deposit and a contrasting variant for Withdraw.
+  >Disabled and focus states for accessibility.
+
+.small-text / p:
+  >Displays helper messages or validation text under inputs/buttons.
+
+
+JavaScript Functionality
+-------------------------
+This part wires up interactivity: updating the displayed balance, handling input validation, and preventing invalid states.
+
+1.Initialize:
+  >Select the balance element (document.getElementById('balance')) and parse its numeric value (start at 0).
+  >Select the Deposit and Withdraw buttons and any amount input fields.
+2.Deposit flow:
+  >On depositBtn click, read the amount value (e.g., from an input).
+  >Validate the input (non-empty, parses to positive number).
+  >Add the amount to the current balance, update the balance element (balanceEl.textContent = formattedAmount).
+  >Optionally show a success message and update the transaction status.
+3.Withdraw flow:
+  >On withdrawBtn click, read and validate the amount.
+  >Check for sufficient funds (prevent negative balances). If insufficient, show an error message.
+  >If valid, subtract the amount from the balance and update the display.
+  >Optionally animate the change or show the last transaction details.
+4.Formatting & helpers:
+  >Use a formatting helper to display currency consistently (e.g., toLocaleString() with currency options).
+  >Keep numeric state in a JS variable (e.g., let balance = 0) and always update the DOM from that source of truth.
+  >Consider adding aria-live="polite" to the balance element so screen readers announce changes.
