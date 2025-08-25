@@ -1,0 +1,31 @@
+Objective
+The aim of this experiment is to create a simple SVG-based drawing tool using web technologies (HTML, CSS, and JavaScript) where users can draw freely on a digital canvas.
+What We Do in This Experiment
+HTML Setup (index.html)
+We design the basic structure of the webpage.
+A container is created with a heading "SVG Drawing Tool".
+Inside this container, an SVG element (<svg id="drawing-board">) is placed, which acts as our drawing canvas.
+The JavaScript file (script.js) is linked to add interactivity.
+The CSS file (style.css) is linked to apply styling.
+
+Styling the Tool (style.css)
+The page background is set to a light gray for contrast.
+The layout is centered both vertically and horizontally using flexbox.
+The drawing container is styled with:
+80% of the viewport’s width and height.
+A black border to define the drawing area.
+A white background with a subtle shadow for a neat look.
+The SVG canvas (#drawing-board) is set to fill the entire container and display a crosshair cursor to indicate drawing.
+
+Adding Functionality (script.js)
+JavaScript provides the drawing logic inside the SVG canvas.
+Likely features (based on standard SVG drawing tools):
+Detects mouse events (mousedown, mousemove, mouseup) to start and stop drawing.
+Draws lines or paths as the user moves the mouse.
+Stores drawing paths inside the SVG so the user can see their strokes.
+Ensures smooth and continuous drawing experience.
+Outcome
+After completing this experiment, we successfully build an interactive drawing tool where users can draw shapes or freehand lines directly inside the browser using SVG graphics. This introduces the concepts of:
+Working with SVG elements in HTML.
+Styling a web app with CSS layouts.
+Using JavaScript event handling for interactivity.
