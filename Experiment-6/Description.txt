@@ -28,4 +28,3 @@ Outcome
 After completing this experiment, we successfully build an interactive drawing tool where users can draw shapes or freehand lines directly inside the browser using SVG graphics. This introduces the concepts of:
 Working with SVG elements in HTML.
 Styling a web app with CSS layouts.
-Using JavaScript event handling for interactivity.
