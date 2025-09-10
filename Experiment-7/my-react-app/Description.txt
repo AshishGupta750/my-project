@@ -1,0 +1,49 @@
+ProductCard Component — Instruction Description
+Summary
+Create a small, reusable React component called ProductCard that receives product data via props (name, price, stock status) and renders those details in a clear, presentable card. This exercise demonstrates how to pass data into components and render dynamic content without changing the component code.
+Learning objectives
+Understand how to define and use props in a React component.
+Learn to render dynamic UI based on incoming data.
+Build a reusable, single-responsibility UI component.
+Practice simple styling and conditional rendering (e.g., “In stock” vs “Out of stock”).
+Prerequisites
+Basic knowledge of React (functional components, JSX).
+A working React environment (Create React App, Vite, or equivalent).
+Task steps
+Create a functional React component named ProductCard.
+Define props for:
+name (string) — product name
+price (number or string) — product price
+inStock (boolean) — stock availability
+Render the three pieces of information in a tidy card layout (e.g., bordered box, card with title, price, and stock badge).
+Use conditional rendering for stock status — for example show “In stock” when inStock === true, otherwise show “Out of stock”.
+Demonstrate usage by rendering ProductCard multiple times with different prop values (no modifications to ProductCard itself).
+Props interface (example)
+type ProductCardProps = {
+  name: string;
+  price: number | string;
+  inStock: boolean;
+};
+Example usage
+<ProductCard name="Wireless Headphones" price={129.99} inStock={true} />
+<ProductCard name="Classic Notebook" price="₹299" inStock={false} />
+<ProductCard name="USB-C Cable" price={499} inStock={true} />
+Styling hints
+Keep styling minimal and reusable: card border, padding, bold product name, price emphasized.
+Add a visual stock indicator (green dot/text for available, red/gray for unavailable).
+Use CSS modules, Tailwind, or inline styles depending on your project setup.
+Expected Output
+A visually distinct card component showing the product name, price, and a clear stock status.
+The same ProductCard component should correctly display different data when used with different props — no component changes necessary to render new products.
+When rendered multiple times with different props, each card correctly reflects its product data.
+Acceptance criteria
+ProductCard is a functional component that accepts and uses the described props.
+Stock status uses conditional rendering (text or badge).
+Example page demonstrates at least 3 different products passed into the same component.
+The component is reusable and requires no modification to display other products.
+Extensions (optional)
+Add a click handler prop (e.g., onAddToCart) to make the card interactive.
+Format price consistently (currency formatting).
+Add PropTypes or TypeScript types for prop validation.
+Make the component accessible (proper semantic HTML, ARIA where needed).
+If you want, I can also provide a ready-to-run ProductCard React file (with basic CSS) that meets these instructions. Would you like that?
