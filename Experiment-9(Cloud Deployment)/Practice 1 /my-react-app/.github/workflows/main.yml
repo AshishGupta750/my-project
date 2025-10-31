@@ -1,0 +1,43 @@
+# Name of your workflow
+name: React CI - Build and Test
+
+# --- 1. Trigger ---
+# This workflow runs on every push to the 'main' branch
+on:
+  push:
+    branches: [ "main" ]
+
+# --- 2. Jobs ---
+# A workflow is made of one or more jobs that run in parallel or sequentially
+jobs:
+  # This job is named 'build-and-test'
+  build-and-test:
+    # --- 3. Runner ---
+    # It runs on the latest version of an Ubuntu virtual machine
+    runs-on: ubuntu-latest
+
+    # --- 4. Steps ---
+    # A job is made of sequential steps
+    steps:
+      # Step 1: Checks out your repository's code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Sets up the Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Use the same version as your Dockerfile
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests
+      # create-react-app automatically runs in non-watch mode in a CI environment
+      - name: Run tests
+        run: npm test
+
+      # Step 5: Build the production app
+      - name: Build project
+        run: npm run build
