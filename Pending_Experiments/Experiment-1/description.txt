@@ -1,0 +1,18 @@
+HTML file (student_form.html):
+------------------------------
+  >Builds a basic web page containing a form intended for entering student information. Users can fill in details such as name, roll number, class, or other student data as required by the form's structure.
+
+CSS file (style.css):
+----------------------
+  >Applies custom styles to the form elements. The styling features:
+  >A bisque background with brown text for the form.
+  >Specific width (200px) and height (200px).
+  >A 10px solid black border with rounded corners (20px border-radius).
+  >Padding and margin for internal spacing and centering
+  >The form uses a flexbox layout with column direction and center alignment for its child elements.
+
+The purpose is to teach how to:
+->Structure a form in HTML for user input.
+->Link and use an external CSS file to enhance visual appearance.
+->Apply layout and design principles (like flexbox) to build attractive and responsive web forms.
+

@@ -1,0 +1,58 @@
+HTML Structure
+---------------
+Defines the skeleton of the webpage.
+Contains two containers (div blocks), each with:
+  >A heading (h2) "Live Character Counter".
+  >A text area (textarea) for user text input.
+  >A paragraph (p) that shows the number of characters typed, updated dynamically by JavaScript.
+
+Key parts:
+
+1.First Container:
+  >Empty text area with placeholder "Start typing...".
+  >Character counter starts from 0.
+
+2.Second Container:
+  >Pre-filled text area with "Hello from ByteXL".
+  >Character counter starts at 17 (since "Hello from ByteXL" has 17 characters).
+
+
+
+CSS Styling
+-------------
+
+body:
+  >Uses a clean sans-serif font.
+  >Centers content vertically and horizontally using Flexbox.
+  >Light gray background for the whole page.
+
+.container:
+  >White background box with padding.
+  >Border and margin for spacing.
+  >Fixed width: 500px so the text inputs are neatly contained.
+
+h2:
+  >Bold, slightly larger font titles above each counter.
+
+textarea:
+  >Expands the full width of its container.
+  >Initial height of 100px.
+  >Styled with padding, border, and resizable vertically.
+
+p:
+  >Displays the live character count neatly under the text area.
+
+
+
+JavaScript Functionality
+-------------------------
+This part makes the counters live (update automatically as the user types).
+
+1.First Counter (Empty Textbox)
+  >Gets a reference to the "text-input" textarea and "char-count" span.
+  >Adds an event listener for the "input" event (fires whenever user types).
+  >Updates the char-count span to show the length of typed text (value.length).
+
+2.Second Counter (Pre-filled Textbox)
+  >Gets "text-input-2" textarea and "char-count-2" span.
+  >Same logic: updates counter as the user edits text.

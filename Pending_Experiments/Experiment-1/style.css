@@ -1,0 +1,22 @@
+
+form{
+    background-color: bisque;
+    color: brown;
+    width: 200px;
+    height: 200px;
+    border: 10px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 10px 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+}
+ body{
+    display: flex;
+    flex-direction: column;
+    
+ }
