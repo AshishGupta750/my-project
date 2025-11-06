@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  # Your Node.js API
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app # Mounts your local code into the container for hot-reloading
+      - /app/node_modules # Prevents local node_modules from overwriting container's
+    depends_on:
+      - mongo
+    environment:
+      # Use the internal Docker network name for Mongo
+      MONGO_URI: mongodb://mongo:27017/ecommerce
+      JWT_SECRET: your-docker-secret
+
+  # MongoDB Service
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017" # Exposes Mongo to your host machine
+    volumes:
+      - mongo-data:/data/db # Persists data
+
+volumes:
+  mongo-data:
